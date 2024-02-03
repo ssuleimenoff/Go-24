@@ -1,7 +1,5 @@
-module github.com/suleimenoff/Go-24
+module github.com/ssuleimenoff/Go-24/tsis1
 
-go 1.16
+go 1.18
 
-require (
-	github.com/Go-24/mux v1.8.0
-)
+require github.com/gorilla/mux v1.8.1

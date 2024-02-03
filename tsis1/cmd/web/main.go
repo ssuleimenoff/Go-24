@@ -1,3 +1,4 @@
+// main.go
 package main
 
 import (
@@ -10,10 +11,11 @@ import (
 func main() {
 	router := mux.NewRouter()
 
-	// Routes Defining
-	router.HandleFunc("api/data", GetList).Methods("GET")
-	router.HandleFunc("api/data/{name}, GetItem").Methods("GET")
+	// Define routes
+	router.HandleFunc("/api/heroes", GetHeroes).Methods("GET")
+	router.HandleFunc("/api/heroes/{name}", GetHero).Methods("GET")
 	router.HandleFunc("/health", HealthCheck).Methods("GET")
 
+	// Start the server
 	log.Fatal(http.ListenAndServe(":8080", router))
 }

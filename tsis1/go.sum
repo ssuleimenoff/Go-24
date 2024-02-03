@@ -1,3 +1,2 @@
-// go.sum
-github.com/gorilla/mux v1.8.0 h1:J4Bw6iC09A8MqMzi5dp/1VsH8qNx3ChXjweZl+HHQlI=
-github.com/gorilla/mux v1.8.0/go.mod h1:4z7nLpE3U+3xON5swv7A7MewO/0iKvVad32UD8y5Wzo=
+github.com/gorilla/mux v1.8.1 h1:TuBL49tXwgrFYWhqrNgrUNEY92u81SPhu7sTdzQEiWY=
+github.com/gorilla/mux v1.8.1/go.mod h1:AKf9I4AEqPTmMytcMc0KkNouC66V3BtZ4qD5fmWSiMQ=
