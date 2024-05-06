@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tournament Results</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #2db2ff, #001510);
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #fff;
+        }
+        th {
+            background-color: #2db2ff;
+            color: #fff;
+        }
+        td {
+            background-color: #001510;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        ul li {
+            padding: 5px 0;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Tournament Results</h1>
+    <table border="1">
+        <tr>
+            <th>Rounds</th>
+            <th>Matches</th>
+            <th>Return matches</th>
+        </tr>
+        {{ range $index, $round := .Rounds }}
+        <tr>
+            <td>{{ $round.Number }}</td>
+            <td>
+                <ul>
+                    {{ range $match := $round.Matches }}
+                    <li>{{ $match.Team1 }} vs {{ $match.Team2 }}: {{ $match.Score1 }} - {{ $match.Score2 }}</li>
+                    {{ end }}
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    {{ range $drawMatch := $round.Drawers }}
+                    <li>{{ $drawMatch.Team1 }} vs {{ $drawMatch.Team2 }}: {{ $drawMatch.Score1 }} - {{ $drawMatch.Score2 }}</li>
+                    {{ end }}
+                </ul>
+            </td>
+        </tr>
+        {{ end }}
+    </table>
+    <h2>Winner: {{ .Winner }}</h2>
+</body>
+</html>
